@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+    height: 100%;
+    background-color: rgb(250, 250, 250);
+    margin: 0;
+    font-family: 'Barlow', sans-serif !important;
+}
+
+h5{
+    font-family: 'Barlow', sans-serif;
+}
+
+@media (max-width: 576px) { /* Smaller mobile devices */
+    .logo-header {
+        width: 150px !important;/* Even smaller size for very small screens */
+    }
+
+    .plans-container{
+        width: 100vw !important;
+    }
+
+    .register-container{
+        width: 90vw !important;
+    }
+
+    .login-container{
+        width: 90vw !important;
+    }
+}
