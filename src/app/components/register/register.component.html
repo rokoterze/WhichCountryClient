@@ -1,0 +1,119 @@
+<div class="container-fluid" style="height: 95vh; overflow-y: scroll;">
+  <div style="background-color: #563D7C" class="row pt-2 shadow p-3 mb-5 d-flex align-items-center">
+
+    <div class="col d-flex align-items-center flex-direction-row" style="min-height: 38px;">
+      <a href="/home"><img src="ipaddresslookup.png" class="logo-header text-start"
+          style="width: 200px; margin-bottom: 0px;"></a>
+    </div>
+
+    <div class="col text-end">
+      <img class="home-icon" src="assets/home.png" alt="home-button" (click)="routerService.goToHome()">
+    </div>
+  </div>
+
+  <div class="d-flex flex-column align-items-center justify-content-center pt-5">
+    <div class="register-container p-5 d-flex flex-column text-center shadow"
+      style="height: fit-content; width: 20vw; min-width: fit-content;">
+      <h4>Register</h4>
+
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div>
+
+          <!-- USERNAME -->
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"
+                style="border-top-right-radius: 0; border-bottom-right-radius: 0;"><i
+                  class="bi bi-person-fill"></i></span>
+            </div>
+            <input formControlName="username" type="text" class="form-control" placeholder="Username"
+              aria-label="Username" aria-describedby="basic-addon1" required>
+          </div>
+
+          <!-- NAME -->
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"
+                style="border-top-right-radius: 0; border-bottom-right-radius: 0;"><i
+                  class="bi bi-person-vcard"></i></span>
+            </div>
+            <input formControlName="firstname" type="text" class="form-control" placeholder="First Name"
+              aria-label="First Name" aria-describedby="basic-addon1" required>
+          </div>
+
+          <!-- SURNAME -->
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"
+                style="border-top-right-radius: 0; border-bottom-right-radius: 0;"><i
+                  class="bi bi-person-vcard"></i></span>
+            </div>
+            <input formControlName="lastname" type="text" class="form-control" placeholder="Last Name"
+              aria-label="Last Name" aria-describedby="basic-addon1" required>
+          </div>
+
+          <!-- EMAIL -->
+          <div class=" mb-4">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  style="border-top-right-radius: 0; border-bottom-right-radius: 0;"><i
+                    class="bi bi-envelope-at"></i></span>
+              </div>
+              <input formControlName="email" type="email" class="form-control" placeholder="Email" aria-label="Email"
+                aria-describedby="basic-addon1" required>
+            </div>
+            <div class="d-flex flex-direction-row ml-4"
+              *ngIf="registerForm.get('email')?.invalid || registerForm.get('email')?.dirty">
+              <small style="color: red; font-size: 12px; align-self: right;"
+                *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email format.</small>
+            </div>
+          </div>
+
+
+          <!-- PASSWORD 1st -->
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"
+                style="border-top-right-radius: 0; border-bottom-right-radius: 0;"><i class="bi bi-lock"></i></span>
+            </div>
+            <input formControlName="password" type="password" class="form-control" placeholder="Password"
+              aria-label="Password" aria-describedby="basic-addon1" required>
+          </div>
+
+          <!-- PASSWORD 2nd -->
+          <div class="mb-4">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  style="border-top-right-radius: 0; border-bottom-right-radius: 0;"><i class="bi bi-lock"></i></span>
+              </div>
+              <input formControlName="password_second" type="password" class="form-control"
+                placeholder="Confirm Password" aria-label="Confirm Password" aria-describedby="basic-addon1" required>
+            </div>
+            <div class="d-flex flex-direction-row ml-4" *ngIf="!comparePassword()">
+              <small style="color: red; font-size: 12px; align-self: right;">Passwords do not match!</small>
+            </div>
+          </div>
+
+          <!-- PLAN SELECTION -->
+          <div class="dropdown mb-4">
+            <label for="planOptions">Select a plan:</label><br>
+            <select class="btn" id="planOptions" formControlName="userPlan" style="width: 140px; background-color: #7654a9; color: white;">
+              <option class="dropdown-item" *ngFor="let plan of planOptions" [value]="plan.value">{{plan.value}}</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary btn-sm" type="submit" style="width: 90%;"
+            [disabled]="registerForm.invalid || !comparePassword()">SUBMIT</button>
+
+          <div class="mt-3">
+            <p>Already have an account? <a (click)="routerService.goToLogin()"
+                style="cursor: pointer; color: rgb(85, 85, 255);">Log in</a></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

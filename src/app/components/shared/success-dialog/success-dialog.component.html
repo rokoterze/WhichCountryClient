@@ -1,0 +1,16 @@
+<div class="main-dialog-content">
+    <div class="dialog-header">
+        <h3 class="dialog-title">Success</h3>
+        <img (click)="onClose()" class="dialog-close-img" src="assets/close.png" alt="close-img">
+    </div>
+
+    <div class="dialog-body">
+        <div class="success-container">
+            <p class="success-message">{{data.successMessage}}</p>
+        </div>
+        
+
+        <div class="button-container">
+            <button class="dialog-close-button" (click)="onClose()">Ok</button>
+        </div>
+    </div>

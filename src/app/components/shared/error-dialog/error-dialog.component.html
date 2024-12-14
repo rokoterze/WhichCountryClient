@@ -1,0 +1,16 @@
+<div class="main-dialog-content">
+    <div class="dialog-header">
+        <h3 class="dialog-title">Error</h3>
+        <img (click)="onClose()" class="dialog-close-img" src="assets/close.png" alt="close-img">
+    </div>
+
+    <div class="dialog-body">
+        <div class="error-container">
+            <p class="error-message">{{data}}</p>
+        </div>
+        
+
+        <div class="button-container">
+            <button class="dialog-close-button" (click)="onClose()">Ok</button>
+        </div>
+    </div>

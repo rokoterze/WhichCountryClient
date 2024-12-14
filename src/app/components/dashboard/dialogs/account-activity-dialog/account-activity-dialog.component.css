@@ -1,0 +1,43 @@
+.main-dialog-content {
+    border-radius: 8px;
+    outline: none;
+}
+
+.dialog-header {
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #563D7C;
+    padding: 0px 12px;
+    color: white;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0px;
+
+    outline: none;
+}
+
+.dialog-title {
+    margin: 0;
+    font-weight: 500;
+}
+
+.dialog-close-img {
+    width: 12px;
+    cursor: pointer;
+}
+
+.dialog-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 400px;
+    background-color: white;
+
+    padding: 24px;
+}

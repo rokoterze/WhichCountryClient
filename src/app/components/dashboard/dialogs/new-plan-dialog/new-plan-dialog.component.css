@@ -1,0 +1,121 @@
+.main-dialog-content {
+    border-radius: 8px;
+    outline: none;
+}
+
+.dialog-header {
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #563D7C;
+    padding: 0px 12px;
+    color: white;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0px;
+
+    outline: none;
+}
+
+.dialog-title {
+    margin: 0;
+    font-weight: 500;
+}
+
+.dialog-close-img {
+    width: 12px;
+    cursor: pointer;
+}
+
+.dialog-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 420px;
+    background-color: white;
+
+    padding: 24px;
+}
+
+.main-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.dialog-body .text-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.dialog-label {
+    font-size: 14px;
+    color: #563D7C;
+    font-weight: 600;
+
+    padding-bottom: 4px;
+}
+
+.small-text-input {
+    width: 60px;
+}
+
+.large-text-input {
+    width: 100%;
+    height: 120px;
+    
+    resize: none;
+    outline: none;
+    
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.dialog-dropdown {
+    width: 150px;
+    height: 32px;
+
+    color: #563D7C;
+    font-size: 13px;
+
+    outline: none;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+
+    cursor: pointer;
+}
+
+.dialog-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.save-button {
+    width: 120px;
+    height: 40px;
+
+    background-color: green;
+    color: white;
+
+    border-radius: 4px;
+    outline: none;
+    border: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy-img{
+    height: 18px;
+    padding-right: 8px;
+}

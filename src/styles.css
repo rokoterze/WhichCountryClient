@@ -11,6 +11,13 @@ h5{
     font-family: 'Barlow', sans-serif;
 }
 
+.home-icon, .logout-icon{
+    height: 24px;
+    padding-left: 12px;
+
+    cursor: pointer;
+}
+
 @media (max-width: 576px) { /* Smaller mobile devices */
     .logo-header {
         width: 150px !important;/* Even smaller size for very small screens */

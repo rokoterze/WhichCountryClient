@@ -1,0 +1,76 @@
+<div class="main-dialog-content">
+    <div class="dialog-header">
+        <h3 class="dialog-title">Plan Profile</h3>
+        <img (click)="onClose()" class="dialog-close-img" src="assets/close.png" alt="close-img">
+    </div>
+
+    <div class="dialog-body">
+        <!-- Plan General Information -->
+        <div class="plan-token">
+            <label class="subtitle" for="plan-token-ta">Plan Token</label>
+            <textarea disabled name="plan-token-ta" id="plan-token-ta">{{this.token}}</textarea>
+            <button>Copy</button>
+        </div>
+
+        <div class="plan-general">
+            <h3>General Information</h3>
+
+            <div class="plan-general-subcontainer">
+                <div class="plan-name">
+                    <label class="subtitle" for="plan-name">Name</label>
+                    <input type="text" name="plan-name" id="plan-name">
+                </div>
+        
+                <div class="plan-description">
+                    <label class="subtitle"  for="plan-description">Description</label>
+                    <input type="text" name="plan-description" id="plan-description">
+                </div>
+        
+                <div class="plan-price">
+                    <label class="subtitle" for="plan-price">Price</label>
+                    <input type="text" name="plan-price" id="plan-price">
+                </div>
+        
+                <div class="plan-status">
+                    <label class="subtitle" for="plan-status">Status</label>
+                    <input type="text" name="plan-status" id="plan-status">
+                </div>
+    
+                <div class="plan-activation">
+                    <button>Activate / Deactivate</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="plan-upgrade">
+            <h3>Plan Upgrade</h3>
+            <div class="plan-upgrade-subcontainer">
+                <label class="subtitle" for="plan-upgrade">Upgrade To</label>
+                <select name="upgrade-plan-dropdown" id="upgrade-plan-dropdown">
+                    <option value="">Plan XYZ</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="plan-details">
+            <label class="subtitle" for="plan-start">Plan Start</label>
+            <input type="text" name="plan-start" id="plan-start">
+
+            <label  class="subtitle"  for="plan-end">Plan End</label>
+            <input type="text" name="plan-end" id="plan-end">
+        </div>
+
+        <!-- Plan History Table-->
+        <h5>Plan History</h5>
+
+        <div class="table-container">
+            
+        </div>
+
+        <!-- Plan Usage Table -->
+        <h5>Plan Usage History</h5>
+
+        <div class="table-container">
+            
+        </div>
+    </div>

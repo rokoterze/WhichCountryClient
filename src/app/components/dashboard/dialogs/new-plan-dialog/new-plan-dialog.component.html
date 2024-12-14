@@ -1,0 +1,71 @@
+<div class="main-dialog-content">
+    <div class="dialog-header">
+        <h3 class="dialog-title">Buy New Plan</h3>
+        <img (click)="onClose()" class="dialog-close-img" src="assets/close.png" alt="close-img">
+    </div>
+
+    <div class="dialog-body">
+        <div class="main-info">
+            <!-- Dropdown for Plans -->
+            <div class="dropdown-container">
+                <label class="dialog-label" for="dropdown">Plan</label>
+                <select
+                    class="dialog-dropdown"
+                    name="plan-dropdown"
+                    id="plan-dropdown"
+                    [(ngModel)]="selectedPlanId"
+                    (change)="onPlanSelectionChange()"
+                >
+                    <!-- Dynamically populate options -->
+                    <option *ngFor="let plan of systemPlans" [value]="plan.planId">
+                        {{ plan.planName }}
+                    </option>
+                </select>
+            </div>
+    
+            <!-- Price Display -->
+            <div class="text-container">
+                <label class="dialog-label" for="text-price">Price</label>
+                <input
+                    class="small-text-input"
+                    disabled
+                    readonly
+                    type="text"
+                    [value]="selectedPlan?.planPrice + ' €'"
+                />
+            </div>
+        </div>
+    
+        <!-- Request Limit Display -->
+        <div class="text-container">
+            <label class="dialog-label" for="text-price">Daily Request Limit</label>
+            <input
+                class="small-text-input"
+                disabled
+                readonly
+                type="text"
+                [value]="selectedPlan?.planRequestLimit"
+            />
+        </div>
+    
+        <!-- Description Display -->
+        <div class="text-container">
+            <label class="dialog-label" for="text-price">Description</label>
+            <textarea
+                readonly
+                disabled
+                class="large-text-input"
+                [value]="selectedPlan?.planDescription"
+            ></textarea>
+        </div>
+    
+        <!-- Footer with Action Button -->
+        <div class="dialog-footer">
+            <button class="save-button" (click)="assignNewUserPlan()">
+                <img class="buy-img" src="assets/shopping-cart.png" alt="" />
+                <span>Buy Now</span>
+            </button>
+        </div>
+    </div>
+    
+</div>

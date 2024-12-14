@@ -1,0 +1,94 @@
+<div class="container-fluid overflow-auto" style="height: 95vh;">
+    <div style="background-color: #563D7C" class="row pt-2 shadow p-3 d-flex align-items-center">
+
+        <div class="col d-flex align-items-center flex-direction-row">
+            <a href="/home"><img src="ipaddresslookup.png" class="logo-header text-start"
+                    style="width: 200px; margin-bottom: 0px;"></a>
+        </div>
+
+        <div class="col text-end">
+            @if(apiService.isLoggedIn()){
+                <div class="col text-end">
+                    <img class="home-icon" src="assets/grid.png" alt="home-button" (click)="routerService.goToDashboard()">
+                    <img class="logout-icon" src="assets/power-off.png" alt="logout-button" (click)="routerService.logout()">
+                  </div>
+            }
+            @else{
+            <button class="btn btn-outline-warning me-2" (click)="routerService.goToRegister()">Register</button>
+            <button class="btn btn-outline-warning" (click)="routerService.goToLogin()">Log In</button>
+            }
+        </div>
+    </div>
+
+    <div>
+        <form class="text-center pb-5 pt-5" (ngSubmit)="fetchIpGeoLocation(ipAddress)">
+            <div class="form-row d-flex justify-content-center">
+                <div class="form-group col-md-4">
+                    <input class="form-control" type="text" [(ngModel)]="ipAddress" name="ipAddress"
+                        placeholder="Enter IP Address..">
+                    <small id="emailHelp" class="form-text text-muted">Format: eg. 192.168.1.1 </small>
+                </div>
+                <div class="form-group col-md-1">
+                    <button class="btn btn-outline-primary" type="submit">SEARCH</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row" style="padding-left: 5%; padding-right: 5%;">
+        <div class="col-md-4" style="padding-left: 5%; padding-right: 5%; background-color: hsl(0, 0%, 100%);">
+            <label for="countryCode"><strong>Country Code</strong></label><br>
+            <input class="form-control" name="countryCode" type="text" disabled
+                value="{{ responseData ? responseData.countryCode : '' }}"><br>
+
+            <label for="countryName"><strong>Country Name</strong></label><br>
+            <input class="form-control" name="countryName" type="text" disabled
+                value="{{ responseData ? responseData.countryName : '' }}"><br>
+
+            <label for="countryRegion"><strong>Region</strong></label><br>
+            <input class="form-control" name="countryRegion" type="text" disabled
+                value="{{ responseData ? responseData.countryRegion : '' }}"><br>
+
+            <label for="countrySubregion"><strong>Subregion</strong></label><br>
+            <input class="form-control" name="countrySubregion" type="text" disabled
+                value="{{ responseData ? responseData.countrySubregion : '' }}"><br>
+        </div>
+
+        <div class="col d-flex justify-content-center py-3 px-3" style="background-color: hsl(0, 0%, 100%);">
+
+            <div class="col shadow d-flex justify-content-center align-items-center">
+                @if(flagData){
+                <img [src]="flagData ? flagData : ''" alt="Base64 Image">
+                } @else{
+                <p><i>...Country Flag</i></p>
+                }
+            </div>
+        </div>
+
+        <div class="shadow mt-5">
+            <h6><strong>Developer?</strong></h6>
+            <p>An IP address, or Internet Protocol address, is a unique numerical label assigned to each device
+                connected to a computer network that uses the Internet Protocol for communication. It serves two primary
+                functions: identifying the host or network interface and providing the location of the device within the
+                network. IP addresses can be classified as either IPv4, which consists of four sets of numbers separated
+                by periods (e.g., 192.168.1.1), or IPv6, which is a newer version designed to accommodate the growing
+                number of devices connected to the internet, featuring a longer format with hexadecimal numbers.
+                Understanding IP addresses is essential for network configuration, troubleshooting, and ensuring proper
+                communication between devices on a network.</p>
+        </div>
+
+        <div class="shadow mt-5">
+            <h6>What is an IP Address?</h6>
+            <p>An IP address, or Internet Protocol address, is a unique numerical label assigned to each device
+                connected to a computer network that uses the Internet Protocol for communication. It serves two primary
+                functions: identifying the host or network interface and providing the location of the device within the
+                network. IP addresses can be classified as either IPv4, which consists of four sets of numbers separated
+                by periods (e.g., 192.168.1.1), or IPv6, which is a newer version designed to accommodate the growing
+                number of devices connected to the internet, featuring a longer format with hexadecimal numbers.
+                Understanding IP addresses is essential for network configuration, troubleshooting, and ensuring proper
+                communication between devices on a network.</p>
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>

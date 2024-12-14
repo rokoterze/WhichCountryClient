@@ -27,4 +27,13 @@ export class RouterService {
   public goToApi() {
     this.router.navigate(['/api']);
   }
+
+  public goToDashboard() {
+    this.router.navigate(['/dashboard']);
+  }
+
+  public logout(){
+    localStorage.removeItem("user");
+    this.router.navigate(['/home']);
+  }
 }
